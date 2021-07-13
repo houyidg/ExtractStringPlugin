@@ -1,0 +1,41 @@
+<idea-plugin>
+  <id>com.zx.plugin</id>
+  <name>auto extract string res</name>
+  <version>1.0</version>
+  <vendor email="511700417@qq.com" url="https://github.com/houyidg">houyi github</vendor>
+
+  <description><![CDATA[
+    1.支持单个xml和Java中的汉字文案一键提取到string资源文件.<br>
+    2.可独立修改单个文案
+]]></description>
+
+  <change-notes><![CDATA[
+      use case.<br>
+      1.select refactor.<br>
+      2.find extract string.<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.java</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+<!--    <action id="Test" class="Test" text="Test">-->
+<!--      <add-to-group group-id="EditMenu" anchor="last"/>-->
+<!--    </action>-->
+    <action id="StringExtractor" class="com.zx.plugin.MainAction" text="Extract String">
+      <add-to-group group-id="RefactoringMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="alt e"/>
+    </action>
+  </actions>
+
+</idea-plugin>
